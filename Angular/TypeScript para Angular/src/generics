@@ -1,0 +1,23 @@
+// Generics
+function concatArray(...itens: any[]): any[] {
+    return new Array().concat(...itens);
+};
+
+const numArray = concatArray([1,5], [3]);
+const stgArray = concatArray(["felipe", "goku"], ["vegeta"]);
+
+numArray.push("saitama");
+
+console.log(numArray);
+console.log(stgArray);
+
+// Passando tipos
+function concatArray2<t>(...itens: t[]): t[] {
+    return new Array().concat(...itens);
+};
+
+const numArray2 = concatArray2<number[]>([1,5], [3]);
+const stgArray2 = concatArray2<string[]>(["felipe", "goku"], ["vegeta"]);
+
+console.log(numArray2);
+console.log(stgArray2);
